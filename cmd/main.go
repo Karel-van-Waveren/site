@@ -3,7 +3,8 @@ package main
 import (
 	"html/template"
 	"io"
-	"log"
+
+	// "log"
 	"net/http"
 	"os"
 	"strconv"
@@ -11,6 +12,7 @@ import (
 	"github.com/joho/godotenv"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
+	"github.com/labstack/gommon/log"
 )
 
 type Template struct {
@@ -44,7 +46,11 @@ func main() {
 	}
 
 	e := echo.New()
-	
+
+	if debug {
+		e.Logger.SetLevel(log.DEBUG)
+	}
+
 	e.Use(middleware.Recover())
 	e.Use(middleware.Logger())
 
