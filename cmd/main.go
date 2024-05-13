@@ -3,7 +3,12 @@ package main
 import (
 	"html/template"
 	"io"
+	"log"
+	"net/http"
+	"os"
+	"strconv"
 
+	"github.com/joho/godotenv"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )
@@ -28,8 +33,20 @@ func NewData() *State {
 	return &State{}
 }
 
+func init() {
+}
+
 func main() {
+	debug := true
+	err := godotenv.Load()
+	if err == nil {
+		debug, _ = strconv.ParseBool(os.Getenv("DEBUG"))
+	}
+
 	e := echo.New()
+	
+	e.Use(middleware.Recover())
+	e.Use(middleware.Logger())
 
 	data := NewData()
 
@@ -41,5 +58,17 @@ func main() {
 		return c.Render(200, "index.html", data)
 	})
 
-	e.Logger.Fatal(e.Start(":42069"))
+	if debug {
+		e.Logger.Fatal(e.Start(":80"))
+	} else {
+		fullchain := os.Getenv("FULLCHAIN_PATH")
+		privkey := os.Getenv("PRIVKEY_PATH")
+		log.Print(fullchain)
+		log.Print(privkey)
+
+		err := e.StartTLS(":433", fullchain, privkey)
+		if err != http.ErrServerClosed {
+			log.Fatal(err)
+		}
+	}
 }
