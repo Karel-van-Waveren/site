@@ -1,0 +1,54 @@
+.hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 130%;
+    gap: 3em;
+    background:
+        linear-gradient(to right, var(--bg) 1px, transparent 1px) 0 0,
+        linear-gradient(to right, var(--bg) 1px, transparent 1px) 0 100%,
+        linear-gradient(to left, var(--bg) 1px, transparent 1px) 100% 0,
+        linear-gradient(to left, var(--bg) 1px, transparent 1px) 100% 100%,
+        linear-gradient(to bottom, var(--bg) 1px, transparent 1px) 0 0,
+        linear-gradient(to bottom, var(--bg) 1px, transparent 1px) 100% 0,
+        linear-gradient(to top, var(--bg) 1px, transparent 1px) 0 100%,
+        linear-gradient(to top, var(--bg) 1px, transparent 1px) 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3em;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2em;
+}
+
+.button {
+    padding: 1em 3em;
+    border: 1px solid var(--bg);
+    font-size: 18px;
+}
+
+.primary {
+  background-color: var(--bg);
+  color: var(--text)
+}
+
+@media only screen and (max-width: 1000px) {
+  body {
+    margin: 1em;
+  }
+}
