@@ -6,7 +6,7 @@
 
 :root {
     --bg: #2D2C29;
-    --text: #FFFCF4;
+    --fg: #FFFCF4;
     --yellow: #EDB74D;
     --red: #EB6666;
     --green: #6FB18A;
@@ -23,7 +23,7 @@ body {
     gap: 3em;
 
     background-color :var(--bg);
-    color: var(--text);
+    color: var(--fg);
     font-family: "Domine";
 
     margin: 0 10em;

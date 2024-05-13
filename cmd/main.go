@@ -65,7 +65,7 @@ func main() {
 	})
 
 	if debug {
-		e.Logger.Fatal(e.Start(":80"))
+		e.Logger.Fatal(e.Start(":42069"))
 	} else {
 		fullchain := os.Getenv("FULLCHAIN_PATH")
 		privkey := os.Getenv("PRIVKEY_PATH")

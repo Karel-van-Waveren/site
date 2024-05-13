@@ -7,14 +7,14 @@
     height: 130%;
     gap: 3em;
     background:
-        linear-gradient(to right, var(--bg) 1px, transparent 1px) 0 0,
-        linear-gradient(to right, var(--bg) 1px, transparent 1px) 0 100%,
-        linear-gradient(to left, var(--bg) 1px, transparent 1px) 100% 0,
-        linear-gradient(to left, var(--bg) 1px, transparent 1px) 100% 100%,
-        linear-gradient(to bottom, var(--bg) 1px, transparent 1px) 0 0,
-        linear-gradient(to bottom, var(--bg) 1px, transparent 1px) 100% 0,
-        linear-gradient(to top, var(--bg) 1px, transparent 1px) 0 100%,
-        linear-gradient(to top, var(--bg) 1px, transparent 1px) 100% 100%;
+        linear-gradient(to right, var(--fg) 1px, transparent 1px) 0 0,
+        linear-gradient(to right, var(--fg) 1px, transparent 1px) 0 100%,
+        linear-gradient(to left, var(--fg) 1px, transparent 1px) 100% 0,
+        linear-gradient(to left, var(--fg) 1px, transparent 1px) 100% 100%,
+        linear-gradient(to bottom, var(--fg) 1px, transparent 1px) 0 0,
+        linear-gradient(to bottom, var(--fg) 1px, transparent 1px) 100% 0,
+        linear-gradient(to top, var(--fg) 1px, transparent 1px) 0 100%,
+        linear-gradient(to top, var(--fg) 1px, transparent 1px) 100% 100%;
     background-repeat: no-repeat;
     background-size: 20px 20px;
 
@@ -44,7 +44,7 @@
 
 .primary {
   background-color: var(--bg);
-  color: var(--text)
+  color: var(--fg)
 }
 
 @media only screen and (max-width: 1000px) {
