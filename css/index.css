@@ -21,6 +21,7 @@ body {
     justify-content:flex-start;
     align-items: center;
     gap: 3em;
+    overflow: hidden;
 
     background-color :var(--bg);
     color: var(--fg);
