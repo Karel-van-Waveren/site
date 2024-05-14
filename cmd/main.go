@@ -40,10 +40,8 @@ func init() {
 
 func main() {
 	debug := true
-	err := godotenv.Load()
-	if err == nil {
-		debug, _ = strconv.ParseBool(os.Getenv("DEBUG"))
-	}
+	godotenv.Load()
+	debug, _ = strconv.ParseBool(os.Getenv("DEBUG"))
 
 	e := echo.New()
 
